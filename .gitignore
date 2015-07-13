@@ -1,0 +1,14 @@
+*.ncrunchproject
+*.suo
+*.cache
+*.ncrunchsolution
+*.user
+
+_Resharper.CasualGodComplex
+_NCrunch_CasualGodComplex
+
+CasualGodComplex/bin
+CasualGodComplex/obj
+
+CasualGodComplex.Test/bin
+CasualGodComplex.Test/obj
