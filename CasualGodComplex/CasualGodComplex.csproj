@@ -32,6 +32,9 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Numerics.Vectors">
+      <HintPath>..\packages\System.Numerics.Vectors.4.0.0\lib\portable-net45+win8+wpa81\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -42,6 +45,7 @@
     <Compile Include="Galaxies\Bar.cs" />
     <Compile Include="Galaxies\Cluster.cs" />
     <Compile Include="Galaxies\Cube.cs" />
+    <Compile Include="Galaxies\Grid.cs" />
     <Compile Include="Galaxies\Spiral.cs" />
     <Compile Include="Galaxy.cs" />
     <Compile Include="BaseGalaxySpec.cs" />
@@ -53,6 +57,9 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="ThreeJs.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

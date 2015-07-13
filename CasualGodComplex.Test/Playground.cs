@@ -11,7 +11,7 @@ namespace CasualGodComplex.Test
         [TestMethod]
         public async Task RandomGalaxy()
         {
-            var g = await Galaxy.Generate(new Cluster(1000), new Random(150));
+            var g = await Galaxy.Generate(new Spiral(), new Random(150));
             Console.WriteLine(g.To3JS());
         }
     }

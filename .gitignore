@@ -4,6 +4,8 @@
 *.ncrunchsolution
 *.user
 
+packages
+
 _Resharper.CasualGodComplex
 _NCrunch_CasualGodComplex
 

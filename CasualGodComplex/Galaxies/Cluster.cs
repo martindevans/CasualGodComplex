@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Globalization;
+using System.Numerics;
 
 namespace CasualGodComplex.Galaxies
 {
@@ -47,8 +48,6 @@ namespace CasualGodComplex.Galaxies
 
             for (int i = 0; i < count; i++)
             {
-                var dev = _size / 8;
-
                 yield return new Star(1, random.NormallyDistributedSingle(_deviationX * _size, 0), random.NormallyDistributedSingle(_deviationY * _size, 0), random.NormallyDistributedSingle(_deviationZ * _size, 0), i.ToString(CultureInfo.InvariantCulture));
             }
 
@@ -68,7 +67,7 @@ namespace CasualGodComplex.Galaxies
                     var clusterSize = random.NormallyDistributedSingle(_size / 10, _size / 5);
 
                     foreach (var star in new Cluster(clusterSize, false).Generate(random))
-                        yield return star.Offset(x, y, z);
+                        yield return star.Offset(new Vector3(x, y, z));
                 }
             }
         }
