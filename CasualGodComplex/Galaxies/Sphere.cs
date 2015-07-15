@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Globalization;
+using System.Numerics;
 
 namespace CasualGodComplex.Galaxies
 {
@@ -44,13 +45,22 @@ namespace CasualGodComplex.Galaxies
             var count = random.Next(countMax);
 
             for (int i = 0; i < count; i++)
-                yield return new Star(
+            {
+                var pos = new Vector3(
                     random.NormallyDistributedSingle(_deviationX * _size, 0),
                     random.NormallyDistributedSingle(_deviationY * _size, 0),
-                    random.NormallyDistributedSingle(_deviationZ * _size, 0),
-                    i.ToString(CultureInfo.InvariantCulture),
-                    StarColor.GenerateStarColor(random)
+                    random.NormallyDistributedSingle(_deviationZ * _size, 0)
                 );
+                var d = pos.Length() / _size;
+                var m = d * 2000 + (1 - d) * 15000;
+                var t = random.NormallyDistributedSingle(4000, m, 1000, 40000);
+
+                yield return new Star(
+                    pos,
+                    i.ToString(CultureInfo.InvariantCulture),
+                    t
+                );
+            }
         }
     }
 }

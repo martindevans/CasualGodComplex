@@ -9,7 +9,7 @@ namespace CasualGodComplex.Test
     public class Playground
     {
         [TestMethod]
-        public async Task RandomGalaxy()
+        public async Task Spiral()
         {
             var g = await Galaxy.Generate(new Spiral(), new Random());
             Console.WriteLine(g.To3JS());

@@ -26,8 +26,7 @@ namespace CasualGodComplex.Galaxies
                     (float)(random.NextDouble() - 0.5) * _size,
                     (float)(random.NextDouble() - 0.5) * _size,
                     (float)(random.NextDouble() - 0.5) * _size,
-                    i.ToString(CultureInfo.InvariantCulture),
-                    StarColor.GenerateStarColor(random)
+                    i.ToString(CultureInfo.InvariantCulture)
                 );
             }
         }

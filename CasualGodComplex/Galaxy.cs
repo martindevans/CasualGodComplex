@@ -29,10 +29,11 @@ namespace CasualGodComplex
             b.AppendLine("var stars = [");
             foreach (var star in _stars)
             {
+                var c = StarColor.ConvertTemperature(star.Temperature);
                 b.AppendLine(string.Format("  {{name:\"{0}\",x:{1},y:{2},z:{3},r:{4},g:{5},b:{6}}},",
                     star.Name,
                     star.Position.X, star.Position.Y, star.Position.Z,
-                    star.Color.X, star.Color.Y, star.Color.Z
+                    c.X, c.Y, c.Z
                 ));
             }
             b.AppendLine("];");

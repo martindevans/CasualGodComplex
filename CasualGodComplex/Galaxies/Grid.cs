@@ -29,8 +29,7 @@ namespace CasualGodComplex.Galaxies
                             i * _spacing,
                             j * _spacing,
                             k * _spacing,
-                            i + "" + j + "" + k,
-                            StarColor.GenerateStarColor(random)
+                            i + "" + j + "" + k
                         ).Offset(new Vector3(-_size / 2, -_size / 2, -_size / 2));
                     }
                 }
