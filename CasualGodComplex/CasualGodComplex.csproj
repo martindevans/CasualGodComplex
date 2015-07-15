@@ -46,6 +46,7 @@
     <Compile Include="Galaxies\Cluster.cs" />
     <Compile Include="Galaxies\Cube.cs" />
     <Compile Include="Galaxies\Grid.cs" />
+    <Compile Include="Galaxies\Sphere.cs" />
     <Compile Include="Galaxies\Spiral.cs" />
     <Compile Include="Galaxy.cs" />
     <Compile Include="BaseGalaxySpec.cs" />

@@ -20,5 +20,16 @@ namespace CasualGodComplex
 
             return (float)(randStdNormal * standardDeviation + mean);
         }
+
+        public static float NormallyDistributedSingle(this Random random, float standardDeviation, float mean, float min, float max)
+        {
+            float v;
+            do
+            {
+                v = NormallyDistributedSingle(random, standardDeviation, mean);
+            } while (v < min || v > max);
+
+            return v;
+        }
     }
 }
