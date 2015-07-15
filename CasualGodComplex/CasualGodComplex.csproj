@@ -55,6 +55,7 @@
     <Compile Include="RandomExtensions.cs" />
     <Compile Include="Star.cs" />
     <Compile Include="StarExtensions.cs" />
+    <Compile Include="StarColor.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="ThreeJs.js" />

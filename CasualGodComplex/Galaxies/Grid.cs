@@ -25,7 +25,13 @@ namespace CasualGodComplex.Galaxies
                 {
                     for (int k = 0; k < count; k++)
                     {
-                        yield return new Star(1, i * _spacing, j * _spacing, k * _spacing, i + "" + j + "" + k).Offset(new Vector3(-_size / 2, -_size / 2, -_size / 2));
+                        yield return new Star(
+                            i * _spacing,
+                            j * _spacing,
+                            k * _spacing,
+                            i + "" + j + "" + k,
+                            StarColor.GenerateStarColor(random)
+                        ).Offset(new Vector3(-_size / 2, -_size / 2, -_size / 2));
                     }
                 }
             }

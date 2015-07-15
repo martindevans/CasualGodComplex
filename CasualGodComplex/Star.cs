@@ -10,18 +10,20 @@ namespace CasualGodComplex
         public float Size { get; private set; }
         public string Name { get; private set; }
 
-        public Star(float size, float x, float y, float z, string name)
+        public Vector3 Color { get; private set; }
+
+        public Star(float x, float y, float z, string name, Vector3 color)
         {
-            Size = size;
             Name = name;
             Position = new Vector3(x, y, z);
+            Color = color;
         }
 
-        public Star(float size, Vector3 position, string name)
+        public Star(Vector3 position, string name, Vector3 color)
         {
-            Size = size;
             Name = name;
             Position = position;
+            Color = color;
         }
     }
 }

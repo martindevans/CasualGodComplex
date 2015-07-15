@@ -22,7 +22,13 @@ namespace CasualGodComplex.Galaxies
 
             for (int i = 0; i < count; i++)
             {
-                yield return new Star(1, (float) (random.NextDouble() - 0.5) * _size, (float) (random.NextDouble() - 0.5) * _size, (float) (random.NextDouble() - 0.5) * _size, i.ToString(CultureInfo.InvariantCulture));
+                yield return new Star(
+                    (float)(random.NextDouble() - 0.5) * _size,
+                    (float)(random.NextDouble() - 0.5) * _size,
+                    (float)(random.NextDouble() - 0.5) * _size,
+                    i.ToString(CultureInfo.InvariantCulture),
+                    StarColor.GenerateStarColor(random)
+                );
             }
         }
     }

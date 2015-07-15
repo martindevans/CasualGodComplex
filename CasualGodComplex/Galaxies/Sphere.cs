@@ -44,7 +44,13 @@ namespace CasualGodComplex.Galaxies
             var count = random.Next(countMax);
 
             for (int i = 0; i < count; i++)
-                yield return new Star(1, random.NormallyDistributedSingle(_deviationX * _size, 0), random.NormallyDistributedSingle(_deviationY * _size, 0), random.NormallyDistributedSingle(_deviationZ * _size, 0), i.ToString(CultureInfo.InvariantCulture));
+                yield return new Star(
+                    random.NormallyDistributedSingle(_deviationX * _size, 0),
+                    random.NormallyDistributedSingle(_deviationY * _size, 0),
+                    random.NormallyDistributedSingle(_deviationZ * _size, 0),
+                    i.ToString(CultureInfo.InvariantCulture),
+                    StarColor.GenerateStarColor(random)
+                );
         }
     }
 }
