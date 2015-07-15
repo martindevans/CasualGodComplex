@@ -131,7 +131,7 @@ namespace CasualGodComplex
             // Compute, using Horners method
             return t - ((c[2]*t + c[1])*t + c[0]) /
             //      -------------------------------------
-                    (((d[2]*t + d[1])*t + d[0])*t + 1.0f);
+                 (((d[2]*t + d[1])*t + d[0])*t + 1.0f);
         }
         
         /// <summary>
