@@ -68,11 +68,11 @@ namespace CasualGodComplex
         /// <param name="min">The minimum allowed value (does not bias)</param>
         /// <param name="max">The max allowed value (does not bias)</param>
         /// <returns>A sequence of samples from a normal distribution, clamped to within min and max in an unbiased manner.</returns>
-        public static IEnumerable<float> NormallyDistributedSinglesExperimental(this Random random, float standardDeviation, float mean, float min, float max)
+        public static IEnumerable<float> NormallyDistributedSingles(this Random random, float standardDeviation, float mean, float min, float max)
         {
             // sharing computation doesn't save us much, it's all lost to IEnumerable overhead
             while (true)
-                yield return random.NormallyDistributedSingleExperimental(standardDeviation, mean, min, max);
+                yield return random.NormallyDistributedSingle(standardDeviation, mean, min, max);
         }
 
         /// <summary>
@@ -89,7 +89,7 @@ namespace CasualGodComplex
         /// <param name="min">The minimum allowed value (does not bias)</param>
         /// <param name="max">The max allowed value (does not bias)</param>
         /// <returns>A single sample from a normal distribution, clamped to within min and max in an unbiased manner.</returns>
-        public static float NormallyDistributedSingleExperimental(this Random random, float standardDeviation, float mean, float min, float max)
+        public static float NormallyDistributedSingle(this Random random, float standardDeviation, float mean, float min, float max)
         {
             var nMax = (max - mean) / standardDeviation;
             var nMin = (min - mean) / standardDeviation;
