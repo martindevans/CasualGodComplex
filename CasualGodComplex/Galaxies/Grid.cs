@@ -25,11 +25,12 @@ namespace CasualGodComplex.Galaxies
                 {
                     for (int k = 0; k < count; k++)
                     {
-                        yield return new Star(
-                            i * _spacing,
-                            j * _spacing,
-                            k * _spacing,
-                            i + "" + j + "" + k
+                        yield return new Star(new Vector3(
+                                i * _spacing,
+                                j * _spacing,
+                                k * _spacing
+                            ),
+                            StarName.Generate(random)
                         ).Offset(new Vector3(-_size / 2, -_size / 2, -_size / 2));
                     }
                 }

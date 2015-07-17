@@ -32,6 +32,9 @@ namespace CasualGodComplex.Galaxies
         public float CenterClusterCountDeviation { get; set; }
         public float CenterClusterCountMean { get; set; }
 
+        public float CentralVoidSizeMean { get; set; }
+        public float CentralVoidSizeDeviation { get; set; }
+
         public Spiral()
         {
             Size = 1000;
@@ -57,18 +60,29 @@ namespace CasualGodComplex.Galaxies
             CenterClusterCountMean = 20;
             CenterClusterCountDeviation = 3;
             CenterClusterPositionDeviation = 0.075f;
+
+            CentralVoidSizeMean = 25;
+            CentralVoidSizeDeviation = 7;
         }
 
         protected internal override IEnumerable<Star> Generate(Random random)
         {
+            var centralVoidSize = random.NormallyDistributedSingle(CentralVoidSizeDeviation, CentralVoidSizeMean);
+            if (centralVoidSize < 0)
+                centralVoidSize = 0;
+            var centralVoidSizeSqr = centralVoidSize * centralVoidSize;
+
             foreach (var star in GenerateArms(random))
-                yield return star;
+                if (star.Position.LengthSquared() > centralVoidSizeSqr)
+                    yield return star;
 
             foreach (var star in GenerateCenter(random))
-                yield return star;
+                if (star.Position.LengthSquared() > centralVoidSizeSqr)
+                    yield return star;
 
             foreach (var star in GenerateBackgroundStars(random))
-                yield return star;
+                if (star.Position.LengthSquared() > centralVoidSizeSqr)
+                    yield return star;
         }
 
         private IEnumerable<Star> GenerateBackgroundStars(Random random)

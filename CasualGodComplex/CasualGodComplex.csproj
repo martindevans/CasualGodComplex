@@ -11,6 +11,8 @@
     <AssemblyName>CasualGodComplex</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -20,6 +22,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -28,8 +31,15 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="ColorSharp">
+      <HintPath>..\packages\ColorSharp.0.11.0.32448\lib\net40\ColorSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="MarvellousMarkovModels">
+      <HintPath>..\packages\MarvellousMarkovModels.1.0.0.0\lib\net45\MarvellousMarkovModels.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Numerics.Vectors">
@@ -42,9 +52,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Galaxies\Bar.cs" />
     <Compile Include="Galaxies\Cluster.cs" />
-    <Compile Include="Galaxies\Cube.cs" />
     <Compile Include="Galaxies\Grid.cs" />
     <Compile Include="Galaxies\Sphere.cs" />
     <Compile Include="Galaxies\Spiral.cs" />
@@ -56,6 +64,7 @@
     <Compile Include="Star.cs" />
     <Compile Include="StarExtensions.cs" />
     <Compile Include="StarColor.cs" />
+    <Compile Include="StarName.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="ThreeJs.js" />

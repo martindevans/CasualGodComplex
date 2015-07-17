@@ -57,7 +57,7 @@ namespace CasualGodComplex.Galaxies
 
                 yield return new Star(
                     pos,
-                    i.ToString(CultureInfo.InvariantCulture),
+                    StarName.Generate(random),
                     t
                 );
             }

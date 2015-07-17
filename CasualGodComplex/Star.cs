@@ -12,13 +12,7 @@ namespace CasualGodComplex
 
         public float Temperature { get; internal set; }
 
-        public Star(float x, float y, float z, string name)
-        {
-            Name = name;
-            Position = new Vector3(x, y, z);
-        }
-
-        public Star(Vector3 position, string name, float temp)
+        public Star(Vector3 position, string name, float temp = 0)
         {
             Name = name;
             Position = position;

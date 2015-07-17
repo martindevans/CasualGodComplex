@@ -14,5 +14,15 @@ namespace CasualGodComplex.Test
             var g = await Galaxy.Generate(new Spiral(), new Random());
             Console.WriteLine(g.To3JS());
         }
+
+        [TestMethod]
+        public void Name()
+        {
+            Random r = new Random();
+            for (int i = 0; i < 10; i++)
+            {
+                Console.WriteLine(StarName.Generate(r));
+            }
+        }
     }
 }

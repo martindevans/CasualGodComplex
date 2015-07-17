@@ -18,7 +18,7 @@ namespace CasualGodComplex
             }
         }
 
-        public Galaxy(IEnumerable<Star> stars)
+        private Galaxy(IEnumerable<Star> stars)
         {
             _stars = stars;
         }
