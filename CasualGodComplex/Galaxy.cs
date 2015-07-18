@@ -9,7 +9,7 @@ namespace CasualGodComplex
 {
     public class Galaxy
     {
-        public IEnumerable<Star> Stars { get; }
+        public IEnumerable<Star> Stars { get; private set; }
 
         private Galaxy(IEnumerable<Star> stars)
         {
