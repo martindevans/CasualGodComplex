@@ -4,7 +4,7 @@ using Litipk.ColorSharp.LightSpectrums;
 
 namespace CasualGodComplex
 {
-    static class StarColor
+    public static class StarColor
     {
         public static Vector3 ConvertTemperature(float colorTemperature)
         {
