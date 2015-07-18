@@ -205,7 +205,7 @@ namespace CasualGodComplex
         {
             Weighted( 1.0f, Greek ),
             Weighted( 1.0f, Decorator ),
-            Weighted( 1.0f, RomanNumeral ),
+            Weighted( 0.01f, RomanNumeral ),
             Weighted( 1.0f, Letter ),
             Weighted( 1.0f, Integer ),
             Weighted( 0.3f, Decimal ),
@@ -250,8 +250,9 @@ namespace CasualGodComplex
 
         private static string RomanNumeral(Random random)
         {
-            var integer = (Int32)random.NormallyDistributedSingle(100, 5, 1, 1000);
-            return ToRoman(integer);
+            var integer = (Int32)random.NormallyDistributedSingle(10, 15, 1, 200);
+            var bigInteger = (Int32) random.NormallyDistributedSingle(400, 100, 200, 3000);
+            return ToRoman(random.RandomChoice(0.8f) ? integer : bigInteger);
         }
 
         private static string Letter(Random random)
@@ -280,9 +281,29 @@ namespace CasualGodComplex
                 var result = func(r);
                 if (r.NextDouble() > probability)
                     return result;
-                var prefix = r.RandomChoice() ? r.WeightedChoice(_prefixStrategies)(r) + " " : "";
-                var suffix = r.RandomChoice() ? " " + r.WeightedChoice(_suffixStrategies)(r) : "";
-                return prefix + result + suffix;
+
+
+                var prefix = r.WeightedChoice(_prefixStrategies)(r) + " ";
+                var suffix = " " + r.WeightedChoice(_suffixStrategies)(r);
+
+                switch (
+                    r.RandomChoice(new List<Tuple<float, string>>()
+                    {
+                        Tuple.Create(0.4f, "neither"),
+                        Tuple.Create(1.0f, "prefix"),
+                        Tuple.Create(1.0f, "suffix"),
+                        Tuple.Create(0.2f, "both")
+                    }).Item2)
+                {
+                    case "prefix":
+                        return prefix + result;
+                    case "suffix":
+                        return result + suffix;
+                    case "both":
+                        return prefix + result + suffix;
+                    default:
+                        return result;
+                }
             };
         }
 
@@ -306,9 +327,9 @@ namespace CasualGodComplex
             throw new InvalidOperationException();
         }
 
-        private static bool RandomChoice(this Random random)
+        private static bool RandomChoice(this Random random, float bias = 0.5f)
         {
-            return random.Next()%2 == 0;
+            return random.NextDouble() < bias;
         }
 
         private static Tuple<float, Func<Random, string>> Weighted(float f, Func<Random, string> s)
