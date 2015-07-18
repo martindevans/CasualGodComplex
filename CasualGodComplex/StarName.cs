@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using MarvellousMarkovModels;
+using StrategyList = System.Collections.Generic.List<System.Tuple<float, System.Func<System.Random, string>>>;
 
 namespace CasualGodComplex
 {
@@ -191,7 +192,7 @@ namespace CasualGodComplex
             "Maryellen","Johnetta","Eleanora","Arline","Rae","Caprice"
         };
 
-        private static readonly List<Tuple<float, Func<Random, string>>>  _namingStrategies = new List<Tuple<float, Func<Random, string>>> 
+        private static readonly StrategyList _namingStrategies = new StrategyList
         {
             Weighted( 1.0f, PlainMarkov ),
             Weighted( 1.0f, WithDecoration(1.0f, WithDecoration(0.001f, PlainMarkov)) ),
@@ -200,24 +201,26 @@ namespace CasualGodComplex
             Weighted( 0.01f, r => r.RandomChoice(SpecialLocations) )
         };
 
-        private static readonly List<Tuple<float, Func<Random, string>>> _prefixStrategies = new List<Tuple<float, Func<Random, string>>> 
+        private static readonly StrategyList _prefixStrategies = new StrategyList
         {
             Weighted( 1.0f, Greek ),
             Weighted( 1.0f, Decorator ),
             Weighted( 1.0f, RomanNumeral ),
             Weighted( 1.0f, Letter ),
             Weighted( 1.0f, Integer ),
+            Weighted( 0.3f, Decimal ),
             Weighted( 0.0f, r => "Al" ),
             Weighted( 0.0f, r => "San" ),
         };
 
-        private static readonly List<Tuple<float, Func<Random, string>>> _suffixStrategies = new List<Tuple<float, Func<Random, string>>>
+        private static readonly StrategyList _suffixStrategies = new StrategyList
         {
             Weighted( 1.0f, Greek ),
             Weighted( 1.0f, Decorator ),
             Weighted( 1.0f, RomanNumeral ),
             Weighted( 1.0f, Letter ),
             Weighted( 1.0f, Integer ),
+            Weighted( 0.3f, Decimal ),
         };
 
 
