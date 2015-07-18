@@ -34,7 +34,8 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="ColorSharp">
+    <Reference Include="ColorSharp, Version=0.11.0.32448, Culture=neutral, PublicKeyToken=bf59dc38b2709e38, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\ColorSharp.0.11.0.32448\lib\net40\ColorSharp.dll</HintPath>
     </Reference>
     <Reference Include="MarvellousMarkovModels">
