@@ -34,8 +34,9 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="ColorSharp">
+    <Reference Include="ColorSharp, Version=0.11.0.32448, Culture=neutral, PublicKeyToken=bf59dc38b2709e38, processorArchitecture=MSIL">
       <HintPath>..\packages\ColorSharp.0.11.0.32448\lib\net40\ColorSharp.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="MarvellousMarkovModels">
       <HintPath>..\packages\MarvellousMarkovModels.1.0.0.0\lib\net45\MarvellousMarkovModels.dll</HintPath>
@@ -65,9 +66,6 @@
     <Compile Include="StarExtensions.cs" />
     <Compile Include="StarColor.cs" />
     <Compile Include="StarName.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="ThreeJs.js" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
