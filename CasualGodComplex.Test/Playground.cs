@@ -24,5 +24,11 @@ namespace CasualGodComplex.Test
                 Console.WriteLine(StarName.Generate(r));
             }
         }
+
+        [TestMethod]
+        public void UniqueNames()
+        {
+            var names = String.Join(",\n", StarName.Generate(new Random(), 1000));
+        }
     }
 }

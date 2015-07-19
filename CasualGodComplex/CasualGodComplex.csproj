@@ -34,9 +34,9 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="ColorSharp, Version=0.11.0.32448, Culture=neutral, PublicKeyToken=bf59dc38b2709e38, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="ColorSharp">
       <HintPath>..\packages\ColorSharp.0.11.0.32448\lib\net40\ColorSharp.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="MarvellousMarkovModels">
       <HintPath>..\packages\MarvellousMarkovModels.1.0.0.0\lib\net45\MarvellousMarkovModels.dll</HintPath>
@@ -68,13 +68,10 @@
     <Compile Include="StarName.cs" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="ThreeJs.js" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
   </Target>
