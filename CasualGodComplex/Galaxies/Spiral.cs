@@ -51,7 +51,7 @@ namespace CasualGodComplex.Galaxies
 
         public Spiral()
         {
-            Size = 1000;
+            Size = 750;
             Spacing = 5;
 
             MinimumArms = 3;
