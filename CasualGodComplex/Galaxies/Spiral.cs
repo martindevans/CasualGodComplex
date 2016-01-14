@@ -8,10 +8,24 @@ namespace CasualGodComplex.Galaxies
     public class Spiral
         : BaseGalaxySpec
     {
+        /// <summary>
+        /// Approximate physical size of the galaxy
+        /// </summary>
         public int Size { get; set; }
+
+        /// <summary>
+        /// Approximate spacing between clusters
+        /// </summary>
         public int Spacing { get; set; }
 
+        /// <summary>
+        /// Minimum number of arms
+        /// </summary>
         public int MinimumArms { get; set; }
+
+        /// <summary>
+        /// Maximum number of arms
+        /// </summary>
         public int MaximumArms { get; set; }
 
         public float ClusterCountDeviation { get; set; }
