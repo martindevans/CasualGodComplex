@@ -4,8 +4,10 @@
 *.ncrunchsolution
 *.user
 
+.vs
 packages
 
+_ReSharper.Caches
 _Resharper.CasualGodComplex
 _NCrunch_CasualGodComplex
 
